@@ -1,0 +1,183 @@
+<html>
+<head><title>Food Delivery</title> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+
+<style>
+
+*{
+	margin: 0;
+	padding: 0;
+}
+.banner{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	background: green;
+
+}
+header{
+	background: red;
+	position: fixed;
+	width: 100%;
+	padding: 25px 0px;
+	z-index: 10000;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	transition:0.5s;
+}
+header.sticky{
+	background: #fff;
+	padding: 10px 50px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+header .logo{
+	color: white;
+	font-weight: 700;
+	font-size: 2em;
+	text-decoration: none;
+	padding-left: 60px;
+}
+header.sticky .logo{
+	color: #111;
+}
+header .logo span{
+	color: #ff0157
+}
+header .navigation{
+	position: relative;
+	display: flex;
+    padding-right: 60px;
+}
+header .navigation li{
+	list-style: none;
+	margin-left: 30px;
+}
+header .navigation li a{
+	text-decoration: none;
+	color: white;
+	font-weight: 300px;
+}
+
+header.sticky .navigation li a{
+	color: #111;
+}
+header .navigation li a:hover{
+	color: #ff0157;
+
+}
+
+.text{
+
+  font-size: 35px;
+  width: 600px;
+  height: auto;
+  text-align: center;
+}
+
+@media(max-width: 500px){
+	.banner{
+		width: 600px;
+	}
+}
+@media (max-width: 991px){
+
+ header, header.sticky {
+	padding: 10px 20px;
+
+}
+
+header .navigation{
+    display: none;
+}
+header .navigation.active{
+    width: 100%;
+    height: calc(100% - 68px);
+    position: fixed;
+    top: 68px;
+    left: 0;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background: white;
+
+}
+header .navigation li{
+	margin-left: 0;
+}
+header .navigation li a{
+	text-decoration: none;
+	font-size: 30px;
+	color: red;
+
+}
+.menuToggle{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	background: url(image/menu.png) no-repeat;
+	background-size:40px;
+    background-position: center;
+    padding-right: 100px;
+    cursor: pointer;
+}
+.menuToggle.active{
+	background: url(image/close.png) no-repeat;
+	background-size:25px;
+    background-position: center;
+
+}
+header.sticky .menuToggle{
+    filter:invert(1);
+}
+</style>
+</head>
+<body>
+<header>
+	<a href="#" class="logo">Food Delivery<span>.</span></a>
+	<div class="menuToggle" onclick="toggleMenu();"></div>
+	<ul class="navigation">
+		<li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+		<li><a href="#about" onclick="toggleMenu();">About</a></li>
+		<li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
+		<li><a href="#expert" onclick="toggleMenu();">Expert</a></li>
+		<li><a href="#testimonials" onclick="toggleMenu();">Testimonials</a></li>
+		<li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+	</ul>
+</header>	
+
+
+<section class="banner" id="banner">
+	
+</section>
+<div class="text">
+	<p>marketing, online marketing, internet advertising…whatever you call it, marketing your company online is a big deal these days. After all, internet usage has more than doubled over the past decade and this shift has massively affected how people purchase products and interact with businesses.
+Digital marketing, online marketing, internet advertising…whatever you call it, ny other type of marketing—it’s a way to connect with and influence your potential customers. The real difference is, you connect with and influence those customers online.
+Digital marketing is like any other type of marketing—it’s a way to connect with and influence your potential customers. The real difference is, you connect with and influence those customers online.marketing, online marketing, internet advertising…whatever you call it, marketing your company online is a big deal these days. After all, internet usage has more than doubled over the past decade and this shift has massively affected how people purchase products and interact with businesses.
+Digital marketing, online marketing, internet advertising…whatever you call it, ny other type of marketing—it’s a way to connect with and influence your potential customers. The real difference is, you connect with and influence those customers online.
+Digital marketing is like any other type of marketing—it’s a way to connect with and influence your potential customers. The real difference is, you connect with and influence those customers online.</p>
+</div>
+
+
+
+
+<script type="text/javascript">
+ window.addEventListener('scroll', function(){
+    const header = document.querySelector('header');
+    header.classList.toggle("sticky",window.scrollY > 0);
+
+ });
+
+
+ function toggleMenu(){
+ 	const menuToggle = document.querySelector('.menuToggle');
+ 	const navigation = document.querySelector('.navigation');
+    menuToggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+ }
+
+</script>
+</body>
+</html>
